@@ -1,11 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universite</title>
+    <link rel="styleSheet" href="univ.css">
+    <title>Univrsite</title>
+    <meta name="description" content="Presentation hotele">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    
+        <!-- En-tête principal -->
+        <header>
+            <nav class="top-nav">
+                <div class="container">
+                    <ul>
+                        <li><a href="#">myLamar</a></li>
+                        <li><a href="#">LU Online</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                        <li><a href="#">Directory</a></li>
+                        <li><a href="#">Jobs@LU</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <div class="search">
+                        <input type="text" placeholder="Search...">
+                        <button>Go</button>
+                    </div>
+                </div>
+            </nav>
+            
+            <div class="branding">
+                <div class="logo">
+                    <!-- Forme géométrique -->
+                    <div class="logo-shape"></div>
+                </div>
+                <div class="branding-text">
+                    <h1>UOR UNIVERSITY</h1>
+                    <p>A Member of The Texas State University System</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">About LU</a></li>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Athletics</a></li>
+                    <li><a href="#">Student Life</a></li>
+                    <li><a href="#">News & Events</a></li>
+                    <li><a href="#">Research</a></li>
+                </ul>
+                <div>
+                    <h2><a href="#">Give to Lamar</a></h2>
+                </div>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="image-container">
+                <button class="prev-btn">‹</button>
+                <div class="slider">
+                    <img src="uor.jpeg" alt="Image 1">
+                    <img src="uor1.jpeg" alt="Image 2">
+                    <img src="uor2.jpeg" alt="Image 3">
+                </div>
+                <button class="next-btn">›</button>
+            </div>
+        
+            <div class="event-box">
+                <h2>Spring Open House</h2>
+                <p>Découvrez Lamar University lors de notre journée portes ouvertes le samedi, 25 février.</p>
+                <a href="#" class="btn">Sign Up Now </a>
+            </div>
+        </section>
+        
+
+
+
+        <section class="buttons">
+            <a href="#" class="btn">Prospective Students</a>
+            <a href="#" class="btn">Current Students</a>
+            <a href="#" class="btn">Alumni & Friends</a>
+            <a href="#" class="btn">Faculty & Staff</a>
+            <a href="#" class="btn">Quicklinks</a>
+        </section>
+
+        <section class="campaign">
+            <h3>Campaign goal increased to $125 million</h3>
+            <div class="campaign-details">
+                <p><strong>Investing In The Future</strong></p>
+                <p>Notre campagne a déjà atteint $95 millions, et un nouvel objectif de $125 millions a été fixé.</p>
+                <a href="#">Read more...</a>
+            </div>
+        </section>
+
+        <section class="news-events">
+            <div class="news">
+                <h4>Latest News</h4>
+                <p>LU online nursing program classé troisième au niveau national.</p>
+            </div>
+            <div class="events">
+                <h4>Events Calendar</h4>
+                <p>Faculty Development Workshop: Dr. Patricia Alexander</p>
+            </div>
+        </section>
+
+        <section class="alumni">
+            <h4>LU Honors Alumni</h4>
+            <p>Alumni of Distinction</p>
+            <a href="#" class="btn">Make Your Reservation</a>
+        </section>
+        </main>
+
+        <!-- Pied de page -->
+        <footer>
+            <p>&copy; 2024 Lamar University. Tous droits réservés.</p>
+        </footer>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const images = document.querySelectorAll('.slider img');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const offset = -currentIndex * 100; // Décale selon la largeur de l'image
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateSlider();
+        });
+
+        // Initialisation
+        updateSlider();
+
+    </script>
+
+
+
 </body>
+
 </html>
