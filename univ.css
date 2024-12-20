@@ -11,6 +11,7 @@ body {
     /* Taille de police par défaut */
 }
 
+
 /* Styles pour les petits écrans (moins de 768px) */
 @media (max-width: 768px) {
     body {
@@ -37,6 +38,7 @@ body {
         background-color: #ff2525;
     }
 }
+
 
 
 
@@ -364,7 +366,7 @@ body {
         /* Augmente le padding pour plus d'espace */
         margin-left: 80px;
         /* Ajuste la marge à gauche */
-        margin-right: 300px;
+        margin-right: 10px;
         /* Ajuste la marge à droite */
     }
 
@@ -381,6 +383,7 @@ body {
     .top-nav .search input {
         font-size: 10px;
         /* Augmente la taille de la police du champ de recherche */
+        margin-right: auto;
     }
 
     .top-nav .search button {
@@ -402,11 +405,38 @@ body {
     margin-right: 40px;
 }
 
+.logo {
+    position: relative;
+    width: 100px; /* Ajustez selon vos besoins */
+    height: 100px; /* Ajustez selon vos besoins */
+    margin-right: 15px;
+}
+
+.logo-shape {
+    position: relative;
+    z-index: 1; /* Derrière */
+}
+
+.logo-etoile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Devant */
+}
+
 .logo-shape {
     width: 80px;
-    height: 80px;
+    height: 90px;
     background-color: white;
-    clip-path: polygon(0% 20%, 20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%);
+    clip-path: polygon(50% 100%, 0% 60%, 18% 0%, 82% 0%, 100% 60%);
+    margin-right: 20px;
+}
+
+.logo-etoile {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(255, 0, 0);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     margin-right: 20px;
 }
 
@@ -417,13 +447,19 @@ body {
     text-transform: uppercase;
     margin: 0;
     color: white;
-    letter-spacing: 1px;
+    letter-spacing: 5px;
+    margin-bottom: 2px;
 }
 
 .branding-text p {
+    margin-top: 0px;
     font-size: 14px;
     margin: 5px 0 0;
     color: white;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0px;
+
+
 }
 
 /* Pour les appareils mobiles (téléphones, largeur ≤ 768px) */
@@ -441,6 +477,13 @@ body {
         margin-right: 0;
         margin-bottom: 10px;
     }
+    .logo-etoile {
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
 
     .branding-text h1 {
         font-size: 30px;
@@ -452,6 +495,7 @@ body {
         font-size: 12px;
         text-align: center;
         margin-top: 5px;
+        
     }
 }
 
@@ -489,13 +533,20 @@ body {
         width: 70px;
         height: 70px;
     }
+    .logo-etoile {
+        width: 70px;
+        height: 70px;
+    }
+
 
     .branding-text h1 {
         font-size: 35px;
+        margin-bottom: 2px;
     }
 
     .branding-text p {
         font-size: 14px;
+        margin-top: 0px;
     }
 }
 
@@ -528,13 +579,19 @@ body {
         width: 100px;
         height: 100px;
     }
+    .logo-etoile{
+        width: 100px;
+        height: 100px;
+    }
 
     .branding-text h1 {
         font-size: 50px;
+        margin-bottom: 2px;
     }
 
     .branding-text p {
         font-size: 16px;
+        margin-top: 0px;
     }
 }
 
@@ -922,6 +979,8 @@ body {
     max-width: 1200px;
     /* Optionnel : Limite la largeur maximale pour des écrans très larges */
     margin-top: 10px;
+
+    
 }
 
 /* Boutons */
@@ -953,6 +1012,7 @@ body {
 /* Effet au survol des boutons */
 .buttons .btn:hover {
     background-color: #2980b9;
+
     /* Changement de couleur de fond au survol */
     color: #f1f1f1;
     /* Changement de couleur du texte */
@@ -963,8 +1023,6 @@ body {
     background-color: #1d6fa5;
     /* Couleur plus sombre pendant l'activation */
 }
-
-/* Requêtes Media */
 
 /* Pour les écrans ≤ 1200px */
 @media (max-width: 1200px) {
@@ -1001,6 +1059,7 @@ body {
     .buttons .btn {
         font-size: 13px;
         padding: 6px 10px;
+        
     }
 }
 
@@ -1017,7 +1076,8 @@ body {
     }
 }
 
-.mainer {
+/* Styles généraux */
+.mainer { 
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
@@ -1027,6 +1087,170 @@ body {
     overflow: hidden;
 }
 
+/* Add media queries for responsiveness */
+@media (max-width: 1200px) {
+    .mainer {
+        margin: 10px 120px;
+    }
+
+    .campaign, .alumni {
+        flex: 1;
+        padding: 10px;
+        margin-left: 10px;
+    }
+
+    .news-events > .egal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .news, .events {
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 780px) {
+    .mainer {
+        margin: 10px 50px;
+    }
+
+    .campaign, .alumni {
+        flex: 1;
+        margin-left: 5px;
+        margin-top: 5px;
+    }
+
+    .principal {
+        flex-direction: column;
+    }
+
+    .campaign {
+        border-right: none;
+        margin-bottom: 10px;
+    }
+
+    .campaign h3 {
+        font-size: 16px;
+    }
+
+    .campaign .main-title {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .campaign .sub-title {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .news-events > .egal {
+        flex-direction: column;
+    }
+
+    .news, .events {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .news-events > .become img {
+        width: 150px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainer {
+        margin: 10px 10px;
+    }
+
+    .campaign, .alumni {
+        flex: 1;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .principal {
+        flex-direction: column;
+    }
+
+    .campaign h3 {
+        font-size: 14px;
+    }
+
+    .campaign .main-title {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .news-events > .egal {
+        flex-direction: column;
+    }
+
+    .news, .events {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+
+    .news-events > .become img {
+        width: 120px;
+        height: 60px;
+    }
+
+    .news-events > .become {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 380px) {
+    .mainer {
+        margin: 5px;
+    }
+
+    .campaign, .alumni {
+        flex: 1;
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .principal {
+        flex-direction: column;
+    }
+
+    .campaign h3 {
+        font-size: 12px;
+    }
+
+    .campaign .main-title {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .news-events > .egal {
+        flex-direction: column;
+    }
+
+    .news, .events {
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+
+    .news-events > .become img {
+        width: 70px;
+        height: 50px;
+    }
+
+    .news-events > .become {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+/* Styles généraux */
 .principal {
     display: flex;
     justify-content: space-between;
@@ -1037,11 +1261,13 @@ body {
 .campaign, .alumni {
     flex: 1; /* Les deux articles auront la même largeur */
     padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .campaign {
     border-right: 1px solid #ccc;
-    padding: 20px;
+    padding: 5px;
 }
 
 .campaign h3 {
@@ -1055,27 +1281,25 @@ body {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-  
 }
 
 .campaign .titles {
     display: flex;
     flex-direction: column;
-    margin: 0; /* Supprimer tout écart supplémentaire entre les titres */
+    margin: 0;
 }
 
 .campaign .main-title {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: red;
-    line-height: 40px;
+    line-height: 45px;
     color: white;
     font-weight: bold;
     font-size: 20px;
     padding: 10px;
     text-align: left;
-    margin-bottom: 0; /* Suppression de l'espace sous le main-title */
-    padding: 5px 30px; /* Augmenter le padding horizontal pour élargir la couleur de fond */
-
+    margin-bottom: 0;
+    padding: 5px 30px;
 }
 
 .campaign .sub-title {
@@ -1085,32 +1309,33 @@ body {
     color: #333;
     text-align: center;
     font-size: 16px;
-    padding: 5px 30px; /* Augmenter le padding horizontal pour élargir la couleur de fond */
+    padding: 5px 20px;
     text-decoration: #f10707 underline 4px;
-    margin-top: 0; /* Suppression de l'espace au-dessus du sub-title */
-    margin-bottom: 0; /* Suppression de l'espace sous le sub-title */
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .campaign .first {
     align-self: flex-start;
     text-align: left;
-    margin-left: auto;
-    margin-bottom: 0; /* Suppression de l'espace sous le premier élément */
-    padding: au; /* Suppression du padding */
-    margin-top: auto; /* Suppression de l'espace au-dessus du premier élément */
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding: au;
+    margin-top: auto;
 }
 
 .campaign .campaign-text {
     flex-basis: 100%;
-    margin-top: 0; /* Suppression de l'espace au-dessus du texte de la campagne */
-    padding: 0; /* Suppression du padding */
-    margin-bottom: 0; /* Suppression de l'espace sous le texte de la campagne */
+    margin-top: 0;
+    padding: 0;
+    margin-bottom: 0;
 }
+
 .campaign .first-part, .campaign .second-part {
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
-    line-height: 1.6; /* Ajuster l'espacement des lignes si nécessaire */
+    line-height: 1.6;
 }
 
 .campaign p {
@@ -1130,63 +1355,149 @@ body {
     text-decoration: underline;
 }
 
+
 .principal .alumni {
-    position: relative; /* Nécessaire pour que l'image soit positionnée par rapport à cet élément */
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .principal .alumni img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Centre l'image horizontalement et verticalement */
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
 }
-
 
 
 .news-events {
     display: flex;
     justify-content: space-between;
-    padding: 0px;
+    margin-top: 0;
 }
 
-.news-events > div {
-    flex: 1;
+.news-events > .egal, .news-events > .become {
+    flex: 1; /* Les deux articles auront la même largeur */
     padding: 10px;
-    height: 80px;
 }
 
-.news-events > div:not(:last-child) {
+.news-events > .egal {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news, .events {
+    flex: 1; /* Chaque élément à l'intérieur de .egal prend 50% de la largeur */
+    padding: 1px;
+    margin-top: 0px;
+}
+
+.news-events > .egal > .news, 
+.news-events > .egal > .events {
     border-right: 1px solid #ccc;
+    /* height: 100px; */
+    margin-left: 10px; /* Marge gauche ajoutée */
 }
 
-.news img {
+.news img, .become img {
     max-width: 100%;
-    border-radius: 4px;
 }
 
 .news h4, .events h4, .become h4 {
-    margin-bottom: 10px;
-    color: #333;
+    margin-bottom: 5px;
+    color: red;
+}
+.news h4, .events h4{
+    margin-top: 0px;
+}
+.become h4 {
+    margin-top: px;
 }
 
 .news p, .events p, .become p {
-    color: #555;
+    color: #000000;
+    font-size: 14px;
+    margin-top: 0px;
+    
+}
+
+.news-events > .become {
+    flex: 1; /* Prendre la même largeur que les autres éléments */
+    display: flex;
+    align-items: center;
+}
+
+.news-events > .become img {
+    width: 200px; /* Assurez-vous que l'image est bien dimensionnée */
+    height: 100px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.become div {
+    flex: 1;
 }
 
 
+
+/* Footer Styles */
 .footer {
-    background-color: #000000;
-    /* Fond noir */
-    color: #ffffff;
-    /* Texte blanc */
-    padding: 10px 0;
-    /* Espacement vertical */
-    width: 100%;
-    /* Prend toute la largeur */
+    background-color: #000000; /* Fond noir */
+    color: #ffffff; /* Texte blanc */
+    padding: 10px 0; /* Espacement vertical */
+    width: 100%; /* Prend toute la largeur */
+    margin-bottom: 0px;
 }
 
 .footer p {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-
 }
+
+/* Media Queries for Responsiveness */
+
+/* For screens smaller than 1200px */
+@media (max-width: 1200px) {
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+/* For screens smaller than 780px */
+@media (max-width: 780px) {
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+    .footer {
+        padding: 25px 0;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+}
+
+/* For screens smaller than 380px */
+@media (max-width: 380px) {
+    .footer {
+        padding: 30px 0;
+    }
+
+    .footer p {
+        font-size: 10px;
+    }
+}
+
+
