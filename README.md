@@ -11,7 +11,7 @@
 
 ## Installation
 
-1. Clonez le dépôt : git@github.com:elishamavayanza/file-manager.git
+1. Clonez le dépôt : git@github.com:elishamavayanza/UOR_SHOWING.git
 
 ## Captures d'ecran
 ![principal](./image/correction.JPG)
